@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Exercse 10</title>
+    <script type="text/javascript">
+      var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+      };
+      function error(err) {
+            console.warn('ERROR(' + err.code + '): ' + err.message);
+      };
+      function success(pos) {
+        var crd = pos.coords;
+        window.open("https://www.google.com/maps/@"+crd.latitude+","+crd.longitude+"z")
+        console.log('Latitude : ' + crd.latitude);
+        console.log('Longitude: ' + crd.longitude);
+        console.log('More or less ' + crd.accuracy + ' meters.');
+      };
+      function openMaps(){
+        this.navigator.geolocation.getCurrentPosition(success, error, options);
+      }
+    </script>
+  </head>
+  <body>
+                <button type="button" onclick="openMaps();">Go
+                </button>
+    
+      
+  </body>
+</html>
