@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Promise Excersice</title> 
+   
+</head>
+<body>
+    <div id="container">
+        <div id="ImageContainer">
+           <img id="renew"/>
+        </div>
+        <button id="btnRenew">RenewImage</button>
+    </div>
+    <script>
+    const btn = document.querySelector('#btnRenew');
+    
+    btn.addEventListener('click', loadNewImage);
+    function loadNewImage(){
+    dt = new Date();
+        let src="http://picsum.photos/200/300" ;
+        var images = document.getElementById('renew');
+                images.src = src + "?" + dt.getTime();
+                //javascript:alert(document.lastModified);
+    }
+    </script>
+</body>
+</html>
